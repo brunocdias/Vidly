@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
+<h2>Customers</h2>
 @if (!Model.Any())
 {
     <p>We don't have any customers yet.</p>
@@ -22,15 +22,9 @@ else
             @foreach (var customer in Model)
             {
                 <tr>
-                    <td>
-                        @Html.ActionLink(customer.Name, "Details", new { id = customer.Id }, null)
-                    </td>
+                    <td>@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td>
                 </tr>
             }
         </tbody>
     </table>
-
 }
-
-
-
